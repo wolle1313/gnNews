@@ -1,0 +1,1 @@
+export const flagIcon = (flagTag: string) => `https://www.countryflagicons.com/FLAT/16/${flagTag}.png`

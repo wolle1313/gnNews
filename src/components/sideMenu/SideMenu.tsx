@@ -9,14 +9,20 @@ import countries from 'constants/Countries';
 
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import useDeviceType from 'utils/deviceUtils';
+
+import { LayoutFilters } from './LayoutFilters';
 
 
 
 export const SideMenu: React.FC = () => {
     const { t } = useTranslation()
-
+    const { isDesktop } = useDeviceType()
   return (<StyledWrapper>
-    <Typography variant='h6'>
+    {isDesktop && (
+        <LayoutFilters />
+      )}
+    <Typography variant='body1' fontWeight={700}>
         {t('aside.chooseCountry')}
     </Typography>
     {countries.map(country => 
@@ -36,6 +42,7 @@ export const SideMenu: React.FC = () => {
 const StyledWrapper = styled.aside`
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-width: 200px;
     margin-right: 50px;
     background-color: ${theme.darkGrey};

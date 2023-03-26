@@ -4,12 +4,17 @@ import { useTranslation } from 'react-i18next';
 
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import { ClosingButton } from 'components/common/ClosingButton';
 import theme from 'theme';
 
+interface DescriptionProps {
+  close: () => void
+}
 
-export const Description: React.FC = () => {
+export const Description: React.FC<DescriptionProps> = ({ close }) => {
   const { t } = useTranslation()
   return (<StyledWrapper>
+    <ClosingButton close={close}/>
     <Typography variant='h4'>
        {t('description.struggle')}
     </Typography>

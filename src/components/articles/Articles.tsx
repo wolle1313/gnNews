@@ -42,7 +42,7 @@ export const Articles: React.FC = () => {
     if(fetchStatus.loading) return <LoadingPage />
 
     return (<StyledWrapper order={order}>
-        {articles()}
+        {countryArticles?.length ? articles() : <NoData />}
         <Modal
         open={open}
         onClose={() => {
@@ -51,7 +51,7 @@ export const Articles: React.FC = () => {
           }}>
           <div>
             {articleDetails ? 
-            (<ArticleDetails articleDetails={articleDetails}/>)
+            (<ArticleDetails close={() => setOpen(false)} articleDetails={articleDetails}/>)
             : <NoData />
             }
           </div>

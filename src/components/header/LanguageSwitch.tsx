@@ -22,5 +22,5 @@ export const LanguageSwitch: React.FC = () => {
 const StyledWrapper = styled.div`
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 40px;
 `

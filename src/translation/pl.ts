@@ -1,5 +1,6 @@
 const pl = {
     header: {
+        gnNews: 'gnNews',
         altLogoImg: 'Główne Logo',
         chooseLayout: 'Wybierz układ',
         openModal: 'Przeczytaj'

@@ -37,12 +37,12 @@ export const ArticleItem: React.FC<ArticleItemProps> = ({article, order, setArti
   return (<StyledWrapper order={order}>
     <StyledButton onClick={onArticleClick}>
         { title && (
-        <Typography color={theme.primary} fontWeight={700}>
+        <StyledTitleWrapper color={theme.primary} fontWeight={700}>
             { (urlToImage && order === 'tiles') &&
-            (<img src={urlToImage} alt={t('article.thumbnailAlt')!}/>)
+            (<StyledImage src={urlToImage} alt={t('article.thumbnailAlt')!}/>)
             }
             {title}
-        </Typography>
+        </StyledTitleWrapper>
             )}
         <InfoWrapper order={order}>
         { source && (
@@ -70,11 +70,23 @@ const StyledWrapper = styled.div<StyledWrapperProps>`
 const InfoWrapper = styled.div<InfoWrapperProps>`
     display: flex;
     flex-direction: ${({order}) => order === 'list' ? 'row' : 'column'};
-    margin-top: 5px;
-    justify-content: space-between;
+    margin-top: 15px;
+    justify-content: ${({order}) => order === 'list' ? 'space-between' : 'flex-end'};
 `
 const StyledButton = styled.button`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     border: none;
     width: 100%;
+    height: 100%;
     cursor: pointer;
+`
+const StyledTitleWrapper = styled(Typography)`
+    display: flex;
+`
+const StyledImage = styled.img`
+    max-height: 100px;
+    padding-right: 5px;
 `

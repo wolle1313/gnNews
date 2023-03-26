@@ -11,7 +11,7 @@ import theme from 'theme';
 
 import { Footer } from './Footer';
 import { Header } from './header/Header';
-import { SideMenu } from 'components/SideMenu';
+import { SideMenu } from 'components/sideMenu/SideMenu';
 
 export const BasicLayout: React.FC = () => {
     const { isTablet } = useDeviceType()
@@ -36,7 +36,7 @@ export const BasicLayout: React.FC = () => {
     </StyledWrapper>)
 }
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.main`
     max-width: 1240px;
     margin: 50px auto 0 auto;
     padding: 0 50px;

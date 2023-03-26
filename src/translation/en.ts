@@ -1,5 +1,6 @@
 const en = {
     header: {
+        gnNews: 'gnNews',
         altLogoImg: 'main logo',
         chooseLayout: 'Choose layout',
         openModal: 'Read me'

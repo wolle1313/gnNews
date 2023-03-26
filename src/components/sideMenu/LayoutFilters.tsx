@@ -18,9 +18,10 @@ export const LayoutFilters: React.FC = memo(() => {
     const layoutState = useSelector((state: RootState) => state.newsLayout)
     const dispatch = useDispatch()
     const { t } = useTranslation();
+
   return (
     <StyledWrapper>
-    <Typography>
+    <Typography variant='body1' fontWeight={700}>
         {t('header.chooseLayout')}
     </Typography>
         <StyledButtonGroup
@@ -28,6 +29,7 @@ export const LayoutFilters: React.FC = memo(() => {
             {layouts.map(layout => (
                 <IconButton
                 key={layout.order}
+                data-testid={layout.order}
                 color={layout.order === layoutState.order ? 'primary' : 'default'} 
                 onClick={() => dispatch(changeLayout(layout.order))}>
                     {<layout.icon />}
